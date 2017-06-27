@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
-import { User } from './user.model';
+import { User } from '../models/user.model';
 
 describe('AuthService', () => {
 
@@ -20,6 +20,7 @@ describe('AuthService', () => {
   it('login should return false if user undefined or null', inject([AuthService], (service: AuthService) => {
     expect(service.login(undefined)).toBeFalsy();
     expect(service.login(null)).toBeFalsy();
+
   }));
 
   it('login should return false if user not exists', inject([AuthService], (service: AuthService) => {
@@ -33,7 +34,5 @@ describe('AuthService', () => {
     user = new User('user@test.com','userpassword');
     expect(service.login(user)).toBeTruthy();
   }));
-
-
 
 });

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AuthService } from './auth.service' 
+import { AuthService } from './services/auth.service' 
 
 @NgModule({
   declarations: [
