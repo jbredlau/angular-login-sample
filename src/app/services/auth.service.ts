@@ -6,19 +6,23 @@ export class AuthService {
 
   constructor() { }
 
-  login(user: User): boolean {
+  public login(user: User): boolean {
     if (!user) { return false };
-
+    
     let storedUser = this.findUserByEmail(user.email);
     if ( storedUser && this.checkPassword(user.email, storedUser.email)) {
-      localStorage.setItem("user", user.toString());
+      localStorage.setItem("user", JSON.stringify(user));
       return true;
     }
     return false;
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return this.getAuthenticatedUser() !== null;
+  }
+
+  public logout() {
+    localStorage.removeItem("user");
   }
 
   /*
@@ -39,8 +43,8 @@ export class AuthService {
     return passwort === storedPassword;
   }
 
-  private getAuthenticatedUser(): any {
-      return localStorage.getItem('user');
+  private getAuthenticatedUser(): User {
+      return JSON.parse(localStorage.getItem('user'));
     }
 
 
