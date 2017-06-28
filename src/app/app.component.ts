@@ -12,6 +12,10 @@ import { HomeComponent } from './home/home.component';
 export class AppComponent {
   title: string = 'LoginApp';
 
+  // state of login 
+  /// TODO: State should be hold in Store-Class
+  isLoggedIn: boolean = false;
+
   constructor(private router: Router) {
   };
 

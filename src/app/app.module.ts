@@ -33,7 +33,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   exports: [
     RouterModule

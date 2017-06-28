@@ -1,4 +1,26 @@
 <!--The whole content below can be removed with the new code.-->
+<section class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <md-toolbar color="primary" class="mat-elevation-z10">
+
+        <span><h1 class="md-title text-center">Welcome to {{title}}</h1></span>
+        <span class="fill-remaining"></span>
+           
+  </md-toolbar>
+   
+      <nav md-tab-nav-bar>
+        <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon>home</md-icon>Home</a>
+        <a md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon>exit_to_app</md-icon>Login</a>
+      </nav>
+
+  
+ <router-outlet></router-outlet>
+
+
+
+</section>
+
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!!
@@ -17,7 +39,10 @@
 
 <div id="content">
   <div class="container">
-    <router-outlet></router-outlet>
+   
   </div>
 </div>
 
+
+
+    
