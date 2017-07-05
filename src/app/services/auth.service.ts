@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { User } from "../models/user.model";
 
 @Injectable()
 export class AuthService {
+
+  private userLoggedIn: boolean = false;
+  
+  private currentUser: Subject<User> = new BehaviorSubject<User>(null); 
 
   constructor() { }
 
@@ -12,6 +18,8 @@ export class AuthService {
     let storedUser = this.findUserByEmail(user.email);
     if ( storedUser && this.checkPassword(user.email, storedUser.email)) {
       localStorage.setItem("user", JSON.stringify(user));
+      this.userLoggedIn = true;
+      this.setCurrentUser(user);
       return true;
     }
     return false;
@@ -24,6 +32,16 @@ export class AuthService {
   public logout() {
     localStorage.removeItem("user");
   }
+
+  public setCurrentUser(newUser: User): void {
+    console.log("Debug: Login-Event geworfen:" + newUser.email);
+    this.currentUser.next(newUser);
+  }
+
+  public getCurrentUser(): Subject<User> {
+    return this.currentUser;
+  }
+ 
 
   /*
   * Checken ob user existiert. Wenn ja zurückgeben
@@ -46,6 +64,7 @@ export class AuthService {
   private getAuthenticatedUser(): User {
       return JSON.parse(localStorage.getItem('user'));
     }
+
 
 
 }

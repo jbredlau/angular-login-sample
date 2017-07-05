@@ -32,6 +32,15 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to LoginApp');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Sample LoginApp');
   }));
+
+  xit('should not render login-link if logged in', async(() => {
+    
+  }));
+
+  xit('should render logout-button if logged in', async(() => {
+    
+  }));
+
 });

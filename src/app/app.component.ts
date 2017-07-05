@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { Subscription } from 'rxjs/Subscription';
+import { AuthService } from './services/auth.service';
+import { User } from './models/user.model'; 
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,21 @@ import { HomeComponent } from './home/home.component';
 
 export class AppComponent {
   title: string = 'LoginApp';
-
-  // state of login 
-  /// TODO: State should be hold in Store-Class
-  isLoggedIn: boolean = false;
-
-  constructor(private router: Router) {
+  
+  constructor(private router: Router, private service: AuthService) {
   };
+
+  public isLoggedIn(): boolean {
+    return this.service.isLoggedIn();
+  }
+
+   public logout() {
+    this.service.logout();
+    this.router.navigate(['login']);
+    return false;
+  }
+
+  ngOnInit(): void { 
+  }
 
 }

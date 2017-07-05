@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AuthService} from "../services/auth.service";
 import { User } from "../models/user.model";
+
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
   selector: 'app-login',
@@ -12,8 +15,17 @@ import { User } from "../models/user.model";
 })
 export class LoginComponent implements OnInit {
 
-  public user: User = new User('','');
-  public errorMsg: string = '';
+  user: User = new User('','');
+  errorMsg: string = '';
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(EMAIL_REGEX)]);
+
+  passwdFormControl = new FormControl();
+  // loginForm = new FormGroup ({
+  //  emailFormControl: new FormControl()
+  //});
 
   constructor(
       private service: AuthService, 
@@ -22,11 +34,12 @@ export class LoginComponent implements OnInit {
 
   public login() {
     if(!this.service.login(this.user)){
-      this.errorMsg = 'Failed to login';
+      this.errorMsg = 'Login hat nicht geklappt';
     } else {
       this.errorMsg = '';
       // TODO add guard to protect route
       this.router.navigate(['home']);
+      
     }
     return false;
   }
