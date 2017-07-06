@@ -1,32 +1,33 @@
- 
- <form (submit)="login()">
-    <md-input-container>
-       <input mdInput name="email" type="email" id="email" id="email" 
-        [(ngModel)]="user.email" placeholder="E-Mail" 
-         [formControl]="emailFormControl" required>
-    </md-input-container>
-    <md-error *ngIf="emailFormControl.hasError('required')">
-        Bitte geben Sie Ihre E-Mail Adresse ein
-    </md-error>
-    <md-error *ngIf="emailFormControl.hasError('pattern')">
-        Bitte geben Sie eine gültige E-Mail Adresse
-    </md-error>
-
-    <md-input-container>
-        <input mdInput name="password" type="password" id="password" id="password" 
-        [(ngModel)]="user.password" placeholder="Passwort" 
-        [formControl]="passwdFormControl"required>    
-    </md-input-container>  
-    <md-error *ngIf="passwdFormControl.hasError('required')">
-        Bitte geben Sie Ihr Passwort ein
-    </md-error>  
-
-    <button md-raised-button color="accent">Login</button>
-
-  </form>
-
-
-  {{ errorMsg }}
+ <form [formGroup]="loginForm" (submit)="login()">
+ <md-grid-list cols="1" rowHeight="6:1">
+        <md-grid-tile>
+            <md-input-container>
+                <input mdInput name="email" type="email" id="email" id="email" 
+                    [(ngModel)]="user.email" placeholder="E-Mail" 
+                    [formControl]="loginForm.controls['emailFormControl']" required>
+                <md-error *ngIf="loginForm.controls['emailFormControl'].hasError('required')">
+                    Bitte geben Sie Ihre E-Mail Adresse ein
+                </md-error>
+                <md-error *ngIf="loginForm.controls['emailFormControl'].hasError('pattern')">
+                    Bitte geben Sie eine gültige E-Mail Adresse ein
+                </md-error>
+            </md-input-container>
+        </md-grid-tile>
+        <md-grid-tile>
+            <md-input-container>
+                <input mdInput name="password" type="password" id="password" id="password" 
+                [(ngModel)]="user.password" placeholder="Passwort" 
+                [formControl]="loginForm.controls['passwdFormControl']" required>    
+                <md-error *ngIf="loginForm.controls['passwdFormControl'].hasError('required')">
+                    Bitte geben Sie Ihr Passwort ein
+                </md-error> 
+            </md-input-container>  
+        </md-grid-tile>
+         <md-grid-tile>
+            <button md-raised-button color="accent" [disabled]="!loginForm.valid">Login</button>
+         </md-grid-tile>
+</md-grid-list>
+</form>
 
 
 
