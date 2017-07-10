@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthService} from "../services/auth.service";
 import { User } from "../models/user.model";
 
-// great Regex mailpattern ;-) only demo for this sample 
+// great Regex mailpattern ;-) only for demopurposes for this sample 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   public login() {
     if(!this.service.login(this.user)){
-      this.errorMsg = 'Login hat nicht geklappt';
+      this.errorMsg = 'Login ungültig';
     } else {
       this.errorMsg = '';
       // TODO add guard to protect route

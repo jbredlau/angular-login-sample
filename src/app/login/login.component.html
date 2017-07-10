@@ -26,6 +26,13 @@
          <md-grid-tile>
             <button md-raised-button color="accent" [disabled]="!loginForm.valid">Login</button>
          </md-grid-tile>
+         <md-grid-tile>
+         <md-error *ngIf="errorMsg">
+             <md-icon class="mat-icon-30">warning</md-icon> {{ errorMsg }}
+         </md-error>
+         </md-grid-tile>
+
+         
 </md-grid-list>
 </form>
 
