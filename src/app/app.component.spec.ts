@@ -1,18 +1,24 @@
 import { TestBed, async } from '@angular/core/testing';
-
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { AuthService } from './services/auth.service';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, MaterialModule, BrowserAnimationsModule ],
+      imports: [  RouterTestingModule, 
+                  FormsModule, ReactiveFormsModule,
+                  MaterialModule, 
+                  BrowserAnimationsModule],
       declarations: [
         AppComponent
       ],
+      providers: [AuthService]  
     }).compileComponents();
   }));
 

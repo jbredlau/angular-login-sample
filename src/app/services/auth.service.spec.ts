@@ -24,15 +24,18 @@ describe('AuthService', () => {
   }));
 
   it('login should return false if user not exists', inject([AuthService], (service: AuthService) => {
-    user = new User("notexists@test.com","");
+    user = new User("dagobert@test.com","");
     expect(service.login(user)).toBeFalsy();
   }));
 
   it('should return true if user credentials are ok', inject([AuthService], (service: AuthService) => {
-    user = new User('admin@test.com','adminpassword');
-    expect(service.login(user)).toBeTruthy();
     user = new User('user@test.com','userpassword');
     expect(service.login(user)).toBeTruthy();
+  }));
+
+  it('should return false if user credentials are not ok', inject([AuthService], (service: AuthService) => {
+    user = new User('user@test.com','wrongpassword');
+    expect(service.login(user)).toBeFalsy();
   }));
 
 });
