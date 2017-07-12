@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 // Router Configuration
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

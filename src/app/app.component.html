@@ -14,9 +14,9 @@
   <div fxFlex="60px" class="item">
     <md-card class="mat-elevation-z10">
       <nav md-tab-nav-bar>
-        <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon class="mat-icon-30">home</md-icon>Home</a>
-        <a *ngIf="!isLoggedIn()" md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon class="mat-icon-30">exit_to_app</md-icon>Login</a>
-        <a *ngIf="isLoggedIn()" md-tab-link (click)="logout()" href="#"><md-icon class="mat-icon-30">power_settings_new</md-icon>Logout</a>
+        <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon class="mat-icon-30">home</md-icon></a>
+        <a *ngIf="!isLoggedIn()" md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon class="mat-icon-30">exit_to_app</md-icon></a>
+        <a *ngIf="isLoggedIn()" md-tab-link (click)="logout()" href="#"><md-icon class="mat-icon-30">power_settings_new</md-icon></a>
       </nav>
     </md-card>
   </div>
