@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from './services/auth.service';
 import { User } from './models/user.model'; 
@@ -12,8 +13,13 @@ import { User } from './models/user.model'; 
 
 export class AppComponent {
   title: string = 'LoginApp';
+  currentUrl: string = '';
   
-  constructor(private router: Router, private service: AuthService) {
+  constructor(private router: Router, 
+      private location: Location, private service: AuthService) {
+        router.events.subscribe(() => {
+          this.currentUrl = location.path();
+        });
   };
 
   public isLoggedIn(): boolean {
@@ -26,7 +32,10 @@ export class AppComponent {
     return false;
   }
 
-  ngOnInit(): void { 
+  public showLoginLink(): boolean {
+    return !this.isLoggedIn() && !this.currentUrl.includes("login");
   }
+
+  ngOnInit(): void { }
 
 }
