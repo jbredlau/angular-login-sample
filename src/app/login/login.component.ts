@@ -16,9 +16,9 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 })
 export class LoginComponent implements OnInit {
 
-  private user: User = new User('','');
-  private errorMsg: string = '';
-  private loginForm: FormGroup;
+  user: User = new User('','');
+  errorMsg: string = '';
+  loginForm: FormGroup;
 
   constructor(
       private service: AuthService, 
