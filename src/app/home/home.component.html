@@ -1,18 +1,29 @@
 
-<section class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
-     <md-card>
-      <md-card-title>Email</md-card-title>
-      <md-card-content>{{ user.email }}</md-card-content>
-    </md-card>
-    <md-card *ngIf="user.firstName">
-      <md-card-title>Vorname</md-card-title>
-      <md-card-content>{{ user.firstName }}</md-card-content>
-    </md-card>
-    <md-card *ngIf="user.lastName">
-      <md-card-title>Nachname</md-card-title>
-      <md-card-content>{{ user.lastName }}</md-card-content>
-    </md-card>
-    <md-card *ngIf="user.comment">
-      <md-card-content>{{ user.comment }}</md-card-content>
-    </md-card>
-  </section>
+<md-card class="mat-elevation-z10">
+    <div class="container"
+                fxLayout="row"
+                fxLayoutAlign="start stretch"
+                fxLayoutGap="50px">
+      <div fxFlex class="item item-1" *ngIf="user.avatar">
+            <img md-card-image src= "{{ avatarUrl }} ">
+      </div>
+      <div class="container"
+                  fxLayout="column"
+                  fxLayoutAlign="start stretch"
+                  fxLayoutGap="20px">
+        <div fxFlex class="item">
+          <md-card-content>E-Mail</md-card-content>
+          <md-card-title>{{ user.email }}</md-card-title>
+        </div>
+        <div fxFlex class="item" *ngIf="user.firstName || user.lastName">
+          <md-card-content>Name</md-card-content>
+          <md-card-title>{{ user.firstName }} {{ user.lastName }}</md-card-title>
+        </div>
+        <div fxFlex class="item" *ngIf="user.comment">
+          <md-card-content>Statement</md-card-content>
+          <md-card-title>{{ user.comment }}</md-card-title>
+        </div>
+      </div>
+    </div>
+</md-card>
+

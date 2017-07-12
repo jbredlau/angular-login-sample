@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService} from "../services/auth.service";
 import { User } from "../models/user.model";
 
+const BASE_AVATAR_URL: string = "assets/img"; 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +14,8 @@ import { User } from "../models/user.model";
 })
 export class HomeComponent implements OnInit {
 
-  private user: User = new User('','','','','');
+  private user: User = new User('','');
+  private avatarUrl: string = '';
 
   constructor(
       private service: AuthService, 
@@ -24,7 +27,8 @@ export class HomeComponent implements OnInit {
        // TODO add guard to protect route
       this.router.navigate(['login']);
     } else {
-      this.user = this.service.getAuthenticatedUser(); 
+      this.user = this.service.getAuthenticatedUser();
+      this.avatarUrl = this.user.avatar ? BASE_AVATAR_URL + '/' + this.user.avatar : '';
     }
   }
 
