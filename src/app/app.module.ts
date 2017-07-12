@@ -35,6 +35,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
   ],
   exports: [

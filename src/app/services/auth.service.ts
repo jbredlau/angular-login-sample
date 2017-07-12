@@ -5,8 +5,9 @@ import { User } from "../models/user.model";
 
 // TODO fake user auslagern in BackendMockService
 const users: Array<User> = [
-      new User('admin@test.com','adminpassword',"Tony", "Stark", "Hey, I'm the coolest Avenger"),
-      new User('user@test.com','userpassword', "Thor", "", "Where the **ck is Mjölnir?")
+      new User("cap@test.com","userpassword","Steve", "Rogers", "Hey, I'm the heroest Avenger"),
+      new User("thor@test.com','userpassword", "Thor", "", "Where the **ck is Mjölnir?"),
+      new User("logan@test.com','userpassword", "Logan", "", "I'm Logan the Wolverine")
     ];
   
 

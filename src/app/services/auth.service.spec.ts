@@ -29,12 +29,12 @@ describe('AuthService', () => {
   }));
 
   it('should return true if user credentials are ok', inject([AuthService], (service: AuthService) => {
-    user = new User('user@test.com','userpassword');
+    user = new User('cap@test.com','userpassword');
     expect(service.login(user)).toBeTruthy();
   }));
 
   it('should return false if user credentials are not ok', inject([AuthService], (service: AuthService) => {
-    user = new User('user@test.com','wrongpassword');
+    user = new User('cap@test.com','wrongpassword');
     expect(service.login(user)).toBeFalsy();
   }));
 

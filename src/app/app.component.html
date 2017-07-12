@@ -1,24 +1,31 @@
-<section class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
 
-  <md-toolbar color="primary" class="mat-elevation-z10">
-          <span><md-icon class="mat-icon-30">pie_chart_outlined</md-icon></span>
-          <span><h1 class="md-title text-center">Welcome to Sample {{title}}</h1></span>
-          <span class="fill-remaining"></span>
-  </md-toolbar>
+<div class="container"
+                fxLayout="column"
+                fxLayoutAlign="center"
+                fxLayoutGap="5px">
+  <div fxFlex class="item" >
+    <md-toolbar color="primary" class="mat-elevation-z10">
+            <span><md-icon class="mat-icon-30">pie_chart_outlined</md-icon></span>
+            <span><h1 class="md-title text-center">Welcome to s(a|i)mple {{title}}</h1></span>
+            <span class="fill-remaining"></span>
+    </md-toolbar>
+  </div>
    
-  <md-card>
-    <nav md-tab-nav-bar>
-      <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon class="mat-icon-30">home</md-icon>Home</a>
-      <a *ngIf="!isLoggedIn()" md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon class="mat-icon-30">exit_to_app</md-icon>Login</a>
-      <a *ngIf="isLoggedIn()" md-tab-link (click)="logout()" href="#"><md-icon class="mat-icon-30">power_settings_new</md-icon>Logout</a>
-    </nav>
-  </md-card>
+  <div fxFlex="60px" class="item">
+    <md-card class="mat-elevation-z10">
+      <nav md-tab-nav-bar>
+        <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon class="mat-icon-30">home</md-icon>Home</a>
+        <a *ngIf="!isLoggedIn()" md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon class="mat-icon-30">exit_to_app</md-icon>Login</a>
+        <a *ngIf="isLoggedIn()" md-tab-link (click)="logout()" href="#"><md-icon class="mat-icon-30">power_settings_new</md-icon>Logout</a>
+      </nav>
+    </md-card>
+  </div>
+</div>
 
-<md-card>
-  <router-outlet></router-outlet>
-</md-card>
+<router-outlet></router-outlet>
 
-</section>
+
+
 
 
 

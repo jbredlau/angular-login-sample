@@ -1,41 +1,63 @@
- <form [formGroup]="loginForm" (submit)="login()">
- <md-grid-list cols="1" rowHeight="6:1">
-        <md-grid-tile>
-            <md-input-container>
-                <input mdInput name="email" type="email" id="email" id="email" 
-                    [(ngModel)]="user.email" placeholder="E-Mail" 
-                    [formControl]="loginForm.controls['emailFormControl']" required>
-                <md-error *ngIf="loginForm.controls['emailFormControl'].hasError('required')">
-                    Bitte geben Sie Ihre E-Mail Adresse ein
-                </md-error>
-                <md-error *ngIf="loginForm.controls['emailFormControl'].hasError('pattern')">
-                    Bitte geben Sie eine gültige E-Mail Adresse ein
-                </md-error>
-            </md-input-container>
-        </md-grid-tile>
-        <md-grid-tile>
-            <md-input-container>
-                <input mdInput name="password" type="password" id="password" id="password" 
-                [(ngModel)]="user.password" placeholder="Passwort" 
-                [formControl]="loginForm.controls['passwdFormControl']" required>    
-                <md-error *ngIf="loginForm.controls['passwdFormControl'].hasError('required')">
-                    Bitte geben Sie Ihr Passwort ein
-                </md-error> 
-            </md-input-container>  
-        </md-grid-tile>
-         <md-grid-tile>
-            <button md-raised-button color="accent" [disabled]="!loginForm.valid">Login</button>
-         </md-grid-tile>
-         <md-grid-tile>
-         <md-error *ngIf="errorMsg">
-             <md-icon class="mat-icon-30">warning</md-icon> {{ errorMsg }}
-         </md-error>
-         </md-grid-tile>
 
-         
-</md-grid-list>
+<form [formGroup]="loginForm" (submit)="login()">
+    <md-card class="mat-elevation-z10">
+        <md-card-content>
+            <div class="container"
+                fxLayout="row"
+                fxLayout.xs="column"
+                fxLayoutAlign="start stretch"
+                fxLayoutGap="30px"
+                fxFlex="65%"
+                fxFlex.xs="50%"
+                fxFlex.md="40%"
+                >
+                <div fxFlex class="item item-1">
+                    <md-card class="card-image, mat-elevation-z10">
+                        <img md-card-image src="assets/img/katie-moum-258412.jpg">
+                    </md-card>
+                </div>
+                <div class="container"
+                    fxLayout="column"
+                    fxLayout.xs="column"
+                    fxLayoutAlign="center"
+                    fxLayoutGap="10px"
+                    fxFlex="60%">
+                    <div class="item item-2">
+                        <md-input-container>
+                            <input mdInput name="email" type="email" id="email" id="email" 
+                                [(ngModel)]="user.email" placeholder="E-Mail" 
+                                [formControl]="loginForm.controls['emailFormControl']" required>
+                            <md-error *ngIf="loginForm.controls['emailFormControl'].hasError('required')">
+                                Bitte geben Sie Ihre E-Mail Adresse ein
+                            </md-error>
+                            <md-error *ngIf="loginForm.controls['emailFormControl'].hasError('pattern')">
+                                Bitte geben Sie eine gültige E-Mail Adresse ein
+                            </md-error>
+                        </md-input-container>
+                    </div>
+                    <div class="item item-3">
+                        <md-input-container>
+                            <input mdInput name="password" type="password" id="password" id="password" 
+                                [(ngModel)]="user.password" placeholder="Passwort" 
+                                [formControl]="loginForm.controls['passwdFormControl']" required>    
+                            <md-error *ngIf="loginForm.controls['passwdFormControl'].hasError('required')">
+                                Bitte geben Sie Ihr Passwort ein
+                            </md-error>
+                        </md-input-container>  
+                    </div>
+                    <div class="item item-4">
+                        <button md-raised-button color="accent" [disabled]="!loginForm.valid">Login</button>               
+                    </div>
+                    <div class="item item-5">
+                        <md-error *ngIf="errorMsg">
+                            <md-icon class="mat-icon-30">warning</md-icon> {{ errorMsg }}
+                        </md-error>
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
 </form>
-
 
 
 

@@ -45,7 +45,7 @@ describe('AppComponent', () => {
     
   }));
 
-  xit('should render logout-button if logged in', async(() => {
+  xit('should render userdate if logged in', async(() => {
     
   }));
 
