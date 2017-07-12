@@ -47,6 +47,17 @@ describe('LoginComponent', () => {
           expect(component.loginForm.valid).toBeFalsy();
   });
 
+
+  it('submitting loginform should set correct user in component', () => {
+          expect(component.loginForm.valid).toBeFalsy();
+          component.loginForm.controls['emailFormControl'].setValue("cap@test.com");
+          component.loginForm.controls['passwdFormControl'].setValue("userpassword");
+          expect(component.loginForm.valid).toBeTruthy();
+          component.login();
+          expect(component.user.email).toBe("cap@test.com");
+          expect(component.user.password).toBe("userpassword");
+  });
+
   it('loginform should be valid if fields are correct filled', () => {
           expect(component.loginForm.valid).toBeFalsy();
           component.loginForm.controls['emailFormControl'].setValue("cap@test.com");
