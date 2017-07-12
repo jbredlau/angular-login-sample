@@ -17,6 +17,7 @@
         <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon class="mat-icon-30">home</md-icon></a>
         <a *ngIf="!isLoggedIn()" md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon class="mat-icon-30">exit_to_app</md-icon></a>
         <a *ngIf="isLoggedIn()" md-tab-link (click)="logout()" href="#"><md-icon class="mat-icon-30">power_settings_new</md-icon></a>
+         <a md-tab-link [routerLink]="['/about']" routerLinkActive="active"><md-icon class="mat-icon-30">info_outline</md-icon></a>
       </nav>
     </md-card>
   </div>
