@@ -1,5 +1,41 @@
-# AngularLoginSampleExercise
+# Sample Angular LoginApp
 
+## Why?
+
+This App is a sample and simple Login Page for exercise purposes. It uses 
+            [Angular v4.x](https://angular.io), 
+            [angular-material](https://material.angular.io)
+            and [angular-flex-layout](https://github.com/angular/flex-layout)
+          
+
+For testing the login you can use this credentials: 
+          
+<ul>
+    <li>cap@test.com</li>
+    <li>thor@test.com</li>
+    <li>logan@test.com</li>
+</ul>
+<p>
+Password for every user is „userpassword“
+</p>
+
+## Components
+- AppComponent -> Shell for Application. Contains Toolbar, Navbar and Routing-Configuration
+- LoginComponent -> contains LoginForm with Validation
+- HomeComponent -> protected Landingpage after succesfull userlogin
+- AboutComponent -> unprotected infopage
+- AuthService -> contains authentication-logic and fakeuser
+- UserModel -> represents an user (email, password, firstname, lastname, comment, avatar)
+
+## TODOs and known issues
+- add more e2e UI-Tests
+- implement Angular MockBackend in Repository-Class
+- move Fakeusers to Repository-Class
+- move Routing-Configuration in seperate RoutingModul
+- implement Error-Handling for LocalStorage
+
+
+## Build and Run
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
 
 ## Development server
