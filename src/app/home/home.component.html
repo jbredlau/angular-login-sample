@@ -1,16 +1,24 @@
 
 <md-card class="mat-elevation-z10">
+  <md-card-content>
     <div class="container"
                 fxLayout="row"
+                fxLayout.xs="column"
                 fxLayoutAlign="start stretch"
-                fxLayoutGap="50px">
+                fxFlex="50%"
+                fxFlex.xs="20%"
+                fxFlex.md="40%"
+                fxLayoutGap="50px"
+                fxLayoutGap.xs="20px">
       <div fxFlex class="item item-1" *ngIf="user.avatar">
             <img md-card-image src= "{{ avatarUrl }} ">
       </div>
       <div class="container"
                   fxLayout="column"
-                  fxLayoutAlign="start stretch"
-                  fxLayoutGap="20px">
+                  fxLayoutAlign="center"
+                  fxLayoutGap="20px"
+                  fxLayoutGap.xs="10px"
+                  fxFlex="65%">
         <div fxFlex class="item">
           <md-card-content>E-Mail</md-card-content>
           <md-card-title>{{ user.email }}</md-card-title>
@@ -25,5 +33,6 @@
         </div>
       </div>
     </div>
+  </md-card-content>
 </md-card>
 
