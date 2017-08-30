@@ -11,8 +11,7 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less'],
-  providers: [AuthService]
+  styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
 
