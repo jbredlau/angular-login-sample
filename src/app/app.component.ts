@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from './services/auth.service';
-import { User } from './models/user.model'; 
+import { User } from './models/user.model';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +12,10 @@ import { User } from './models/user.model'; 
 })
 
 export class AppComponent {
-  title: string = 'LoginApp';
-  currentUrl: string = '';
-  
-  constructor(private router: Router, 
+  title = 'LoginApp';
+  currentUrl = '';
+
+  constructor(private router: Router,
       private location: Location, private service: AuthService) {
         router.events.subscribe(() => {
           this.currentUrl = location.path();
@@ -33,7 +33,7 @@ export class AppComponent {
   }
 
   public showLoginLink(): boolean {
-    return !this.isLoggedIn() && !this.currentUrl.includes("login");
+    return !this.isLoggedIn() && !this.currentUrl.includes('login');
   }
 
   ngOnInit(): void { }

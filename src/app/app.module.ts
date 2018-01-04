@@ -4,7 +4,9 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MaterialModule } from '@angular/material';
+// MaterialModule was depreciated in version 2.0.0-beta.3
+// import { MaterialModule } from '@angular/material';
+import { MatInputModule,MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconModule,MatSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -37,7 +39,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
+    MatInputModule,MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconModule,MatSelectModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
   ],

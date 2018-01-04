@@ -1,6 +1,6 @@
 
-<md-card class="mat-elevation-z10">
-  <md-card-content>
+<mat-card class="mat-elevation-z10">
+  <mat-card-content>
     <div class="container"
                 fxLayout="row"
                 fxLayout.xs="column"
@@ -11,7 +11,7 @@
                 fxLayoutGap="50px"
                 fxLayoutGap.xs="20px">
       <div fxFlex class="item item-1" *ngIf="user.avatar">
-            <img md-card-image src= "{{ avatarUrl }} ">
+            <img mat-card-image src= "{{ avatarUrl }} ">
       </div>
       <div class="container"
                   fxLayout="column"
@@ -20,19 +20,19 @@
                   fxLayoutGap.xs="10px"
                   fxFlex="65%">
         <div fxFlex class="item">
-          <md-card-content>E-Mail</md-card-content>
-          <md-card-title>{{ user.email }}</md-card-title>
+          <mat-card-content>E-Mail</mat-card-content>
+          <mat-card-title>{{ user.email }}</mat-card-title>
         </div>
         <div fxFlex class="item" *ngIf="user.firstName || user.lastName">
-          <md-card-content>Name</md-card-content>
-          <md-card-title>{{ user.firstName }} {{ user.lastName }}</md-card-title>
+          <mat-card-content>Name</mat-card-content>
+          <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
         </div>
         <div fxFlex class="item" *ngIf="user.comment">
-          <md-card-content>Statement</md-card-content>
-          <md-card-title>{{ user.comment }}</md-card-title>
+          <mat-card-content>Statement</mat-card-content>
+          <mat-card-title>{{ user.comment }}</mat-card-title>
         </div>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 

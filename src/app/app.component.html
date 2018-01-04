@@ -4,22 +4,22 @@
                 fxLayoutAlign="center"
                 fxLayoutGap="5px">
   <div fxFlex class="item" >
-    <md-toolbar color="primary" class="mat-elevation-z10">
-            <span><md-icon class="mat-icon-30">pie_chart_outlined</md-icon></span>
-            <span><h1 class="md-title text-center">Welcome to s(a|i)mple {{title}}</h1></span>
+    <mat-toolbar color="primary" class="mat-elevation-z10">
+            <span><mat-icon class="mat-icon-30">pie_chart_outlined</mat-icon></span>
+            <span><h1 class="mat-title text-center">Welcome to s(a|i)mple {{title}}</h1></span>
             <span class="fill-remaining"></span>
-    </md-toolbar>
+    </mat-toolbar>
   </div>
-   
+
   <div fxFlex="60px" class="item">
-    <md-card class="mat-elevation-z10">
-      <nav md-tab-nav-bar>
-        <a md-tab-link [routerLink]="['/home']" routerLinkActive="active"><md-icon class="mat-icon-30">home</md-icon></a>
-        <a *ngIf="showLoginLink()" md-tab-link [routerLink]="['/login']" routerLinkActive="active"><md-icon class="mat-icon-30">exit_to_app</md-icon></a>
-        <a *ngIf="isLoggedIn()" md-tab-link (click)="logout()" href="#"><md-icon class="mat-icon-30">power_settings_new</md-icon></a>
-         <a md-tab-link [routerLink]="['/about']" routerLinkActive="active"><md-icon class="mat-icon-30">info_outline</md-icon></a>
+    <mat-card class="mat-elevation-z10">
+      <nav mat-tab-nav-bar>
+        <a mat-tab-link [routerLink]="['/home']" routerLinkActive="active"><mat-icon class="mat-icon-30">home</mat-icon></a>
+        <a *ngIf="showLoginLink()" mat-tab-link [routerLink]="['/login']" routerLinkActive="active"><mat-icon class="mat-icon-30">exit_to_app</mat-icon></a>
+        <a *ngIf="isLoggedIn()" mat-tab-link (click)="logout()" href="#"><mat-icon class="mat-icon-30">power_settings_new</mat-icon></a>
+         <a mat-tab-link [routerLink]="['/about']" routerLinkActive="active"><mat-icon class="mat-icon-30">info_outline</mat-icon></a>
       </nav>
-    </md-card>
+    </mat-card>
   </div>
 </div>
 
@@ -34,4 +34,4 @@
 
 
 
-    
+
