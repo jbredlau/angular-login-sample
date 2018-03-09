@@ -38,7 +38,7 @@ Password for every user is „userpassword“
 
 &nbsp;
 ## Build and Run
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -78,7 +78,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
     - `npm install @angular/flex-layout@latest --save`
 
 - Angular Material
-    -`npm install @angular/material@latest --save`
+    - `npm install @angular/material@latest --save`
 
 &nbsp;
 
